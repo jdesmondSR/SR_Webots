@@ -1,0 +1,50 @@
+#VRML_SIM R2023b utf8
+PROTO SpeedBump [
+	field SFVec3f    translation  -1.99 6.02 0.0100078
+	field SFRotation rotation     0.5773509358554485 0.5773489358556708 0.5773509358554485 2.0944
+	field SFString name "Speed_Bump"
+]
+{
+	Solid {
+      translation IS translation
+      rotation IS rotation
+      children [
+        Solid {
+          translation 0 0 0.0085
+          children [
+            Shape {
+              appearance Appearance {
+                material Material {
+                  diffuseColor 0 0 0
+                }
+              }
+              geometry Cylinder {
+                height 0.066
+                radius 0.011
+              }
+            }
+          ]
+          name "Speed_Bump_Line"
+        }
+        Shape {
+          appearance Appearance {
+            material Material {
+              diffuseColor 1 1 1
+              shininess 0
+            }
+          }
+          geometry Cylinder {
+            height 0.7
+            radius 0.01
+          }
+          castShadows FALSE
+        }
+      ]
+      name IS name
+      boundingObject Cylinder {
+        height 0.7
+        radius 0.01
+      }
+    }
+	
+}

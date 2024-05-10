@@ -1,0 +1,24 @@
+#VRML_SIM R2023b utf8
+PROTO Victim_Yellow[
+	field SFVec3f    translation 	-0.52 5.01 0.2
+	field SFRotation rotation 		0 0 1 1.5708
+	field SFString name "Victim_Yellow"
+]
+{
+	Solid {
+      translation IS translation
+      rotation IS rotation
+      children [
+        DEF Victim Shape {
+          appearance PBRAppearance {
+            baseColor 1 1 0.2
+          }
+          geometry Box {
+            size 0.1 0.01 0.32
+          }
+        }
+      ]
+      name IS name
+      boundingObject USE Victim
+    }
+}

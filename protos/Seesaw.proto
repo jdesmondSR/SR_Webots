@@ -1,0 +1,56 @@
+#VRML_SIM R2023b utf8
+PROTO Seesaw [
+	field SFVec3f    translation  -1.98 5.995 0.0300031
+	field SFRotation rotation     2.3733592655451017e-08 0.7071037811811117 0.707109781179255 3.14159
+	field SFString name "Seesaw"
+]
+{
+	Solid {
+	  translation IS translation
+	  rotation IS rotation
+	  children [
+		HingeJoint {
+		  jointParameters HingeJointParameters {
+			position -0.2
+			axis 1.1 0 0
+			minStop -0.2
+			maxStop 0.2
+			dampingConstant 0.1
+		  }
+		  endPoint Solid {
+			translation 2.0392400000000007e-08 0.05430412009582409 -0.011181210586887154
+			rotation -0.09929068364279205 -0.9900922888233772 0.09929058240454278 1.5807522618669918
+			children [
+			  DEF SEESAW_TOP Shape {
+				appearance Appearance {
+				  texture ImageTexture {
+					url [
+					  "C:/Users/jdesm/OneDrive/Documents/SR/RCJ_2024/Entry_Sim/tiles/1.png"
+					]
+				  }
+				}
+				geometry Box {
+				  size 0.8 0.008 1
+				}
+			  }
+			]
+			boundingObject USE SEESAW_TOP
+			physics Physics {
+			}
+		  }
+		}
+		DEF SEESAW_BOT Shape {
+		  appearance Appearance {
+			material Material {
+			  diffuseColor 0.9 0.6 0
+			}
+		  }
+		  geometry Box {
+			size 0.7 0.11 0.03
+		  }
+		}
+	  ]
+	  name IS name
+	  boundingObject USE SEESAW_BOT
+	}
+}
